@@ -18,9 +18,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/projects" element={<ProjectLayout />} />
-          <Route path='/projects/terminalApp' element={<TerminalAppProject />} />
-          <Route path='terminalApp' element={<TerminalAppProject />} />
+          <Route path="/projects" element={<ProjectLayout />}>
+            <Route path='/projects/terminalApp/' element={<TerminalAppProject />} />
+            <Route path='terminalApp/:versionNumber' element={<TerminalAppProject />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
@@ -28,3 +29,4 @@ function App() {
 }
 
 export default App;
+
